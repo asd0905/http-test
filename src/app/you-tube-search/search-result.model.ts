@@ -1,0 +1,19 @@
+/**
+ * SearchResult는 유튜브 동영상 검색 결과로부터
+ * 개별 기록을 담은 데이터 구조다.
+ * */
+export class SearchResult {
+    id: string;
+    title: string;
+    description: string;
+    thumbnailUrl: string;
+    videoUrl: string;
+
+    constructor(obj?: any) {
+        this.id     = obj && obj.id     || null;
+        this.title   = obj && obj.title    || null;
+        this.description = obj && obj.description || null;
+        this.thumbnailUrl = obj && obj.thumbnailUrl || null;
+        this.videoUrl       = obj && obj.videoUrl || `http://www.youtube.com/watch?v=${this.id}`;
+    }
+}
